@@ -1,0 +1,128 @@
+2026-10-16 17:50:12,826 EVA-attribure INFO: Namespace(config_file='configs/ltcc/eva02_l_maskmeta_random.yml', opts=['TEST.WEIGHT', '/data2/dyk/logs/2025-12/MADE/logs/ltcc/eva02_l_meta_best-515.pth'], local_rank=1)
+2026-10-16 17:50:12,826 EVA-attribure INFO: Loaded configuration file configs/ltcc/eva02_l_maskmeta_random.yml
+2026-10-16 17:50:12,826 EVA-attribure INFO: 
+MODEL:
+  TYPE: eva02_meta
+  NAME: eva02_l_meta
+  META_DIMS: [ 105, ]
+  METRIC_LOSS_TYPE: 'triplet'
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NO_MARGIN: True
+  DEVICE_ID: ('6')
+  ADD_META: True
+  MASK_META: True
+#  ID_LOSS_WEIGHT: 0.1
+#  TRIPLET_LOSS_WEIGHT: 0.9
+
+DATA:
+  IMG_HEIGHT: 224
+  IMG_WIDTH: 224
+  DATASET: 'ltcc'
+  RANDOM_NOISE: True
+
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 15
+  BASE_LR: 2e-5
+  WARMUP_METHOD: 'linear'
+  LARGE_FC_LR: False
+  CHECKPOINT_PERIOD: 20
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 1
+  WEIGHT_DECAY:  0.05
+  WEIGHT_DECAY_BIAS: 0.05
+  BIAS_LR_FACTOR: 2
+  SEED: 1234
+
+
+
+TEST:
+  WEIGHT: ''
+  TYPE: 'image_only'
+  FEAT_NORM: 'yes'
+OUTPUT_DIR: './logs/ltcc-made'
+
+
+2026-10-16 17:50:12,826 EVA-attribure INFO: Running with config:
+AUG:
+  RC_PROB: 0.5
+  RE_PROB: 0.5
+  RF_PROB: 0.5
+DATA:
+  AUX_INFO: True
+  BATCH_SIZE: 8
+  DATASET: ltcc
+  IMG_HEIGHT: 224
+  IMG_WIDTH: 224
+  META_DIR: PAR_PETA_105.txt
+  NUM_INSTANCES: 2
+  NUM_WORKERS: 4
+  PIN_MEMORY: True
+  RANDOM_NOISE: True
+  RANDOM_PROP: 0.05
+  ROOT: /home/ykding/dataset
+  SAMPLER: softmax_triplet
+  TEST_BATCH: 128
+MODEL:
+  ADD_META: True
+  CLOTH_ONLY: False
+  CLOTH_XISHU: 3
+  COS_LAYER: False
+  DEVICE: cuda
+  DEVICE_ID: 6
+  DIST_TRAIN: False
+  ID_LOSS_TYPE: softmax
+  ID_LOSS_WEIGHT: 1.0
+  IF_LABELSMOOTH: off
+  IF_WITH_CENTER: no
+  MASK_META: True
+  META_DIMS: [105]
+  METRIC_LOSS_TYPE: triplet
+  NAME: eva02_l_meta
+  NO_MARGIN: True
+  TRIPLET_LOSS_WEIGHT: 1.0
+  TYPE: eva02_meta
+OUTPUT_DIR: ./logs/ltcc-made
+SOLVER:
+  BASE_LR: 2e-05
+  BIAS_LR_FACTOR: 2
+  CENTER_LOSS_WEIGHT: 0.0005
+  CENTER_LR: 0.5
+  CHECKPOINT_PERIOD: 20
+  COSINE_MARGIN: 0.5
+  COSINE_SCALE: 30
+  EVAL_PERIOD: 1
+  GAMMA: 0.1
+  LARGE_FC_LR: False
+  LOG_PERIOD: 50
+  MARGIN: 0.3
+  MAX_EPOCHS: 15
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: SGD
+  SEED: 1234
+  STEPS: (40, 60)
+  WARMUP_EPOCHS: 20
+  WARMUP_FACTOR: 0.01
+  WARMUP_LR: 7.8125e-07
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.05
+  WEIGHT_DECAY_BIAS: 0.05
+TEST:
+  FEAT_NORM: yes
+  TYPE: image_only
+  WEIGHT: /data2/dyk/logs/2025-12/MADE/logs/ltcc/eva02_l_meta_best-515.pth
+TRAIN:
+  START_EPOCH: 1
+2026-10-16 17:50:24,555 EVA-attribure.test INFO: Enter inferencing
+2026-10-16 17:50:24,556 EVA-attribure.test INFO: transreid inferencing
+2026-10-16 17:50:24,772 EVA-attribure.test INFO: Clothes changing setting
+2026-10-16 17:52:00,147 EVA-attribure.test INFO: CMC curve, Rank-1  :51.5%
+2026-10-16 17:52:00,148 EVA-attribure.test INFO: CMC curve, Rank-5  :63.8%
+2026-10-16 17:52:00,148 EVA-attribure.test INFO: CMC curve, Rank-10 :70.2%
+2026-10-16 17:52:00,148 EVA-attribure.test INFO: CMC curve, mAP:28.7%
+2026-10-16 17:52:00,152 EVA-attribure.test INFO: Standard setting
+2026-10-16 17:53:34,074 EVA-attribure.test INFO: CMC curve, Rank-1  :83.8%
+2026-10-16 17:53:34,074 EVA-attribure.test INFO: CMC curve, Rank-5  :89.0%
+2026-10-16 17:53:34,074 EVA-attribure.test INFO: CMC curve, Rank-10 :91.3%
+2026-10-16 17:53:34,074 EVA-attribure.test INFO: CMC curve, mAP:51.4%
