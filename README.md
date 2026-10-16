@@ -58,7 +58,7 @@ Download the five CC-ReID benchmarks from their official project pages:
 
 GEAM uses offline 105-dimensional pedestrian attributes produced by a frozen SOLIDER attribute detector. The detector is not jointly optimized with GEAM. Precomputed attribute labels for all supported datasets are available on [Google Drive](https://drive.google.com/drive/folders/1WejujoMeDh2G0on14TNnk0LLj4GpdvV4?usp=sharing). Download the corresponding `PAR_PETA_105.txt` file and place it in the root of each dataset.
 
-Alternatively, the attribute labels can be generated with the scripts in [SOLIDER](SOLIDER).
+Alternatively, the attribute labels can be generated with the scripts from the [official SOLIDER repository](https://github.com/tinyvision/SOLIDER).
 
 Each line of an attribute file follows:
 
