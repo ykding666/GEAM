@@ -6,9 +6,9 @@
 
 Official PyTorch implementation
 
-**Accepted by NeurIPS 2027**
+**Accepted by NeurIPS 2026**
 
-![NeurIPS 2027](https://img.shields.io/badge/NeurIPS-2027-AE2D2D.svg)
+![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-2026-AE2D2D.svg)
 [![Python 3.9](https://img.shields.io/badge/Python-3.9-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch 1.12.1](https://img.shields.io/badge/PyTorch-1.12.1-EE4C2C.svg?logo=pytorch&logoColor=white)](https://pytorch.org/)
 ![Task CC-ReID](https://img.shields.io/badge/Task-CC--ReID-7B61FF.svg)
